@@ -1,0 +1,87 @@
+<% include partials/header %>
+
+    <div class="container" style="background-color: #001d26; padding-top: 12px; padding-bottom: 12px; padding-right: 20px;">
+        <div class="row" style="padding-right: 15px;">
+            <div class="col-xl-5 col-md-6">
+                <img class="movieposter" src="http://image.tmdb.org/t/p/original<%=data.poster_path%>">
+            </div>
+            <div class="col-xl-7 col-md-6 moviecontent" style="padding-left: 20px ; padding-right: 20px;">
+                <h3>
+                    <%=data.title%>&nbsp&nbsp(
+                        <%=data.release_date.substring(0,4)%> )
+                            <a title="Add to WatchList" style="color: #00c8ff;" href="#"><img style="width: 40px; float: right;" src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698367-icon-19-bookmark-add-512.png"></a>
+                            <script>
+                            </script>
+                </h3>
+
+                <br>
+                <h5 style="display: inline;">Status &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+                <h5 class="status" style="display: inline; color: #ffffff;">
+                    <%=data.status%>
+                </h5>
+                <h5 class="duration">Duration &nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+                <h5 class="runtime" style=" color: #ffffff;">
+                    <%=data.runtime%> mins
+                </h5>
+                <br>
+                <br>
+                <h5 style="color: #39FF14; display: inline;">User Score&nbsp&nbsp&nbsp&nbsp
+                    <%=data.vote_average%>&nbsp&nbsp&nbsp
+                </h5>
+                <br>
+                <br>
+
+                <br>
+                <h5>Overview</h5>
+                <p style="color: #ffffff; padding-right: 20px;">
+                    <%=data.overview%>
+                </p>
+                <br>
+
+            </div>
+            <div style="margin-top: 25px;" class="col-md-4 col-sm-5 col-6 sectionls">
+                <%if(data.budget!=0){%>
+                    <h5>Budget </h5>
+                    <br>
+                    <%}%>
+                        <%if(data.budget!=0){%>
+                            <h5 style=" margin-top: 5px;">Revenue </h5>
+                            <br>
+                            <%}%>
+                                <h5>Languages</h5>
+                                <br>
+                                <br>
+                                <br>
+                                <h5>Production Companies</h5>
+            </div>
+            <div style="margin-top: 25px;" class="col-md-4 col-sm-5 col-6 sectionrs">
+                <%if(data.budget!=0){%>
+                    <h5 style="color: #ffffff;">
+                        $
+                        <%=data.budget.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');%>
+                    </h5>
+                    <br>
+                    <%}%>
+                        <%if(data.budget!=0){%>
+                            <h5 style=" color: #ffffff;">
+                                $
+                                <%=data.revenue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');%>
+                            </h5>
+                            <br>
+                            <%}%>
+                                <%data.spoken_languages.forEach(function(lang){%>
+                                    <h6 style="color: #ffffff; font-size: 18px;">
+                                        <%=lang.name%>
+                                    </h6>
+                                    <%});%>
+                                        <br>
+                                        <br>
+                                        <%data.production_companies.forEach(function(comp){%>
+                                            <h6 style="color: #ffffff; font-size: 18px;">
+                                                <%=comp.name%>
+                                            </h6>
+                                            <%});%>
+            </div>
+        </div>
+    </div>
+    <% include partials/footer %>

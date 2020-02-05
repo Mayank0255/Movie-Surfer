@@ -1,0 +1,30 @@
+.poster {
+    width: 250px;
+}
+
+.content {
+    padding-top: 50px;
+}
+
+
+/* .tohover:hover {
+    background-color: #00141a;
+} */
+
+@media (max-width:768px) {
+    .content {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width:420px) {
+    .poster {
+        width: 180px;
+    }
+}
+
+@media (min-width:420px) {
+    .poster {
+        width: 250px;
+    }
+}

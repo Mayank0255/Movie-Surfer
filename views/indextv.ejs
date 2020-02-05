@@ -1,0 +1,28 @@
+<% include partials/header %>
+
+
+    <div class="container" style="background-color: #001d26; z-index: 1; padding-left: 0;padding-right: 0px;">
+        <div class="btn-group special" role="group" aria-label="Basic example" style="display:flex;">
+            <a href="/index" class="btn btn-lg btn-outline-primary group" style="flex:1;  border-radius: 0px;">
+                <h4>Movies</h4>
+            </a>
+            <a href="/indextv" class="btn btn-lg btn-outline-primary group active" aria-pressed="true" style="flex:1;  border-radius: 0px;">
+                <h4>TV Shows</h4>
+            </a>
+        </div>
+        <br>
+        <div class="gallery">
+            <% for(i=0;i<genreNames.genres.length;i++){%>
+                <div class="genretabs" id="<%=genreNames.genres[i].id%>" onmouseover="hovergenrein(<%=genreNames.genres[i].id%>)" onmouseout="hovergenreout(<%= genreNames.genres[i].id %>)">
+                    <a href="/indextv/discover/<%=genreNames.genres[i].name%>/<%=genreNames.genres[i].id%>/1"><img src="<%=imagestv[i].url%>"></a>
+                    <div class="link">
+                        <a href="/indextv/discover/<%=genreNames.genres[i].name%>/<%=genreNames.genres[i].id%>/1" style="color: #fff;">
+                            <%=genreNames.genres[i].name%>
+                        </a>
+                    </div>
+                </div>
+                <%} %>
+        </div>
+    </div>
+
+    <% include partials/footer %>
