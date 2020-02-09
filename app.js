@@ -12,8 +12,7 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override");
 
-// "mongodb://localhost/MovieSurfer"
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
+mongoose.connect("mongodb://localhost/MovieSurfer", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,11 +40,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-
-
-app.get("/", function(req, res) {
-    res.redirect("/index");
-});
 
 var images = [
     { url: "https://mla21yeiph1a.i.optimole.com/-AwcUrQd3iQ/w:800/h:533/q:auto/https://www.monstersandcritics.com/wp-content/uploads/2018/10/Hobbs-and-Shaw-Fast-and-the-Furious.jpg" },
@@ -90,6 +84,11 @@ var imagestv = [
 ];
 
 // =============================================== INDEX PAGE OF MOVIES AND TV SHOWS ============================================================
+
+
+app.get("/", function(req, res) {
+    res.redirect("/index");
+});
 
 app.get("/index", function(req, res) {
     request("https://api.themoviedb.org/3/genre/movie/list?api_key=2358e7487a7ec65f8d1133ca61f0f1e2&language=en-US", function(error, response, body) {
@@ -284,7 +283,7 @@ app.get("/logout", function(req, res) {
 
 const port = process.env.PORT;
 
-app.listen(port, function() {
+app.listen(1000, function() {
     console.log("MovieSurfer server started");
 
 });
