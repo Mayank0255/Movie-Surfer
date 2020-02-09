@@ -10,7 +10,7 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override");
 
-mongoose.connect("mongodb://localhost/MovieSurfer", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect("mongodb://localhost/MovieSurfer", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));

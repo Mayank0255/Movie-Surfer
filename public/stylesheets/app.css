@@ -70,6 +70,7 @@ body {
 
 .gallery img {
     width: 100%;
+    border-width: 3px;
     border-radius: 2px;
 }
 
