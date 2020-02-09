@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
@@ -10,7 +12,8 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override");
 
-mongoose.connect("mongodb://localhost/MovieSurfer", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
+// "mongodb://localhost/MovieSurfer"
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -279,8 +282,9 @@ app.get("/logout", function(req, res) {
     res.redirect("/index");
 });
 
+const port = process.env.PORT;
 
-app.listen(1000, function() {
+app.listen(port, function() {
     console.log("MovieSurfer server started");
 
 });
