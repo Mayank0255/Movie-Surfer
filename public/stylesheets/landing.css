@@ -1,0 +1,124 @@
+body {
+    background-color: #000000;
+}
+
+#landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+#landing-header h1 {
+    color: #00c8ff;
+    font-size: 6em;
+    font-weight: 200;
+    letter-spacing: -.09em;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    padding-bottom: 20px;
+}
+
+@media (max-width:420px) {
+    #landing-header h1 {
+        font-size: 5em;
+    }
+}
+
+.btn-outline-primary {
+    color: #00c8ff;
+    border-color: #00c8ff;
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    color: #001d26;
+    background-color: #00c8ff;
+}
+
+.btn-outline-primary:hover {
+    border-color: #00c8ff;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show>.btn-outline-primary.dropdown-toggle {
+    color: #001d26;
+    background-color: #00c8ff;
+    border-color: #00c8ff;
+}
+
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 30s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+    background-image: url(https://wallpapercave.com/wp/wp2196807.jpg)
+}
+
+.slideshow li:nth-child(2) {
+    background-image: url(https://wallpapercave.com/wp/wp3869437.jpg);
+    animation-delay: 6s;
+}
+
+.slideshow li:nth-child(3) {
+    background-image: url(https://www.ecopetit.cat/wpic/mpic/31-312695_tom-ellis-as-lucifer-hd-tv-shows-4k.jpg);
+    animation-delay: 12s;
+}
+
+.slideshow li:nth-child(4) {
+    background-image: url(https://www.jakpost.travel/wimages/large/7-77469_deadpool-deadpool-movie-wallpaper-4k.jpg);
+    animation-delay: 18s;
+}
+
+.slideshow li:nth-child(5) {
+    background-image: url(https://www.pixel4k.com/wp-content/uploads/2019/10/joker-2019-movie-new_1570395252.jpg);
+    animation-delay: 24s;
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20% {
+        opacity: 1
+    }
+    30% {
+        opacity: 0
+    }
+}
+
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}

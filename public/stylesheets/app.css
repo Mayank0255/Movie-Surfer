@@ -86,3 +86,25 @@ body {
     font-size: 26px;
     font-weight: bolder;
 }
+
+div>.formtab {
+    margin: 30px 240px;
+}
+
+@media (max-width:993px) {
+    div>.formtab {
+        margin: 30px 100px;
+    }
+}
+
+@media (max-width:768px) {
+    div>.formtab {
+        margin: 30px 70px;
+    }
+}
+
+@media (max-width:576px) {
+    div>.formtab {
+        margin: 30px 20px;
+    }
+}

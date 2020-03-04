@@ -87,7 +87,7 @@ var imagestv = [
 
 
 app.get("/", function(req, res) {
-    res.redirect("/index");
+    res.render("landing");
 });
 
 app.get("/index", function(req, res) {
