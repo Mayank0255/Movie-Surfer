@@ -89,7 +89,7 @@ router.get('/index/search/:page', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('search', { data: data, query: query, page: page });
+                res.render('search', { data: data, query: search, page: page });
             }
         });
 });
