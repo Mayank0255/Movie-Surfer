@@ -4,7 +4,7 @@ const request = require('request');
 const { API_URL, API_KEY_URL } = require('../constants/index');
 
 router.get('/indextv/discover/:tv_id/show', (req, res) => {
-    const tv_id = req.params.tv_id;
+    const { tv_id } = req.params.tv_id;
 
     request(API_URL + `/tv/${tv_id}${API_KEY_URL}`,
         (error, response, body) => {
@@ -17,7 +17,7 @@ router.get('/indextv/discover/:tv_id/show', (req, res) => {
 
 
 router.get('/index/discover/:movie_id/show', (req, res) => {
-    const movie_id = req.params.movie_id;
+    const { movie_id } = req.params.movie_id;
 
     request(API_URL + `/movie/${movie_id}${API_KEY_URL}`,
         (error, response, body) => {
