@@ -21,7 +21,7 @@ router.get('/indextv', (req, res) => {
     request(API_URL + TV_GENRE_URL, (error, response, body) => {
         if (!error && response.statusCode === 200) {
             const genreNames = JSON.parse(body);
-            res.render('indextv', { genreNames: genreNames, imagesTv: imageConfig.imagesTv });
+            res.render('indexTv', { genreNames: genreNames, imagesTv: imageConfig.imagesTv });
         }
     });
 });

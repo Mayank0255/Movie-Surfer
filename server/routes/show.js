@@ -10,7 +10,7 @@ router.get('/indextv/discover/:tv_id/show', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('showtv', { data: data, tv_id: tv_id });
+                res.render('showTv', { data: data, tv_id: tv_id });
             }
         });
 });
