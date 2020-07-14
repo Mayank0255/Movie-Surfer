@@ -2,9 +2,16 @@
 
     <div class="container" style="background-color: #001d26; padding-top: 12px; padding-bottom: 30px; padding-right: 15px;">
         <div>
-            <h3 style="display: inline-block;">
-                <%=genre_name%> Genre &nbsp</h3>
-            <h5 style="color: #ffffff; display: inline-block; margin-bottom: 20px;"> Based On Popularity ↓ </h5>
+            <% if (type === 'discover') { %>
+                <h3 style="display: inline-block;">
+                    <%=genre_name%> Genre &nbsp
+                </h3>
+                <h5 style="color: #ffffff; display: inline-block; margin-bottom: 20px;"> Based On Popularity ↓ </h5>
+            <% } else if (type === 'pop movie') { %>
+                <h3 style="display: inline-block;"> Most Popular Movies &nbsp </h3>
+            <% } else { %>
+                <h3 style="display: inline-block;"> Top Rated Movies &nbsp</h3>
+            <% } %>
         </div>
         <% data.results.forEach(function(data){ %>
             <div class="row" style="padding: 10px; padding-right: 15px;" id="<%= data.id %>" onmouseover="hoverpanelin(<%= data.id %>)" onmouseout="hoverpanelout(<%= data.id %>)">
@@ -34,15 +41,35 @@
                 <div style="text-align: center;">
                     <%if(page==1){%>
                         <% for(var i=parseInt(page);i<parseInt(page)+7;i++){%>
+                            <% if (type === 'discover') { %>
                             <a class="btn btn-sm btn-outline-primary" href="/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>">
                                 <%=i%>
                             </a>
+                            <% } else if (type === 'pop movie') { %>
+                            <a class="btn btn-sm btn-outline-primary" href="/index/discover/pop/<%=i%>">
+                                <%=i%>
+                            </a>
+                            <% } else { %>
+                            <a class="btn btn-sm btn-outline-primary" href="/index/discover/top/<%=i%>">
+                                <%=i%>
+                            </a>
+                            <% } %>
                             <%}%>
                                 <%} else if(page>1){%>
                                     <% for(var i=parseInt(page)-1;i<parseInt(page)+6;i++){%>
-                                        <a class="btn btn-sm btn-outline-primary" href="/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>">
-                                            <%=i%>
-                                        </a>
+                                <% if (type === 'discover') { %>
+                                <a class="btn btn-sm btn-outline-primary" href="/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>">
+                                    <%=i%>
+                                </a>
+                                <% } else if (type === 'pop movie') { %>
+                                <a class="btn btn-sm btn-outline-primary" href="/index/discover/pop/<%=i%>">
+                                    <%=i%>
+                                </a>
+                                <% } else { %>
+                                <a class="btn btn-sm btn-outline-primary" href="/index/discover/top/<%=i%>">
+                                    <%=i%>
+                                </a>
+                                <% } %>
                                         <%}%>
                                             <%}%>
                 </div>
