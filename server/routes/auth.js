@@ -15,7 +15,7 @@ router.post('/register', function(req, res) {
             return res.redirect('/register');
         }
         passport.authenticate('local')(req, res, function() {
-            res.redirect('/index');
+            res.redirect('/movie');
         });
     });
 });
@@ -30,7 +30,7 @@ router.get('/login', function(req, res) {
 
 router.post('/login', function(req, res, next) {
     passport.authenticate('local', {
-        successRedirect: '/index',
+        successRedirect: '/movie',
         failureRedirect: '/login'
     })(req, res);
 });
@@ -39,7 +39,7 @@ router.post('/login', function(req, res, next) {
 
 router.get('/logout', function(req, res) {
     req.logout();
-    res.redirect('/index');
+    res.redirect('/movie');
 });
 
 module.exports = router;

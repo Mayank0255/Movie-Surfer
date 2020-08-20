@@ -1,6 +1,7 @@
+const { API_KEY } = require('../../config/config');
+
 const API_URL = 'https://api.themoviedb.org/3';
 
-const API_KEY = process.env.API_KEY;
 const API_KEY_URL = `?api_key=${API_KEY}&language=en-US`
 
 const MOVIE_GENRE_URL = `/genre/movie/list${API_KEY_URL}`;

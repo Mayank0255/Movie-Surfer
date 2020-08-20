@@ -1,5 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 const express = require('express'),
     app = express(),
@@ -8,9 +7,10 @@ const express = require('express'),
     User = require('./models/user'),
     flash = require('connect-flash'),
     passport = require('passport'),
-    LocalStrategy = require('passport-local');
+    LocalStrategy = require('passport-local'),
+    { MONGO_URL } = require('./config/config');
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
