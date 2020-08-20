@@ -7,33 +7,33 @@
             <% if (type === 'movie') { %>
             active
             <% } %>
-            " aria-pressed="true" style="flex:1;  border-radius: 0px;">
+            " aria-pressed="true" style="flex:1;  border-radius: 0px; padding-top: 16px;">
                 <h4>Movies</h4>
             </a>
             <a href="/tv" class="btn btn-lg btn-outline-primary group
             <% if (type === 'tv') { %>
             active
             <% } %>
-            " style="flex:1;  border-radius: 0px;">
+            " style="flex:1;  border-radius: 0px; padding-top: 16px;">
                 <h4>TV Shows</h4>
             </a>
         </div>
         <br>
         <div class="gallery">
-            <% genreNames.genres.forEach(( genre ) => { %>
-                <div class="genretabs" id="<%=genre.id%>" onmouseover="hovergenrein(<%=genre.id%>)" onmouseout="hovergenreout(<%= genre.id %>)">
+            <% genreNames.genres.forEach(({ id, name }) => { %>
+                <div class="genretabs" id="<%=id%>" onmouseover="hovergenrein(<%=id%>)" onmouseout="hovergenreout(<%= id %>)">
                     <% if (type === 'movie') { %>
-                    <a href="/index/discover/<%=genre.name%>/<%=genre.id%>/1"><img src="/images/<%=imageList[genre.name]%>"></a>
+                    <a href="/index/discover/<%=name%>/<%=id%>/1"><img src="/images/<%=imageList[name]%>"></a>
                     <div class="link">
-                        <a href="/index/discover/<%=genre.name%>/<%=genre.id%>/1" style="color: #ffffff;">
-                            <%=genre.name%>
+                        <a href="/index/discover/<%=name%>/<%=id%>/1" style="color: #ffffff;">
+                            <%=name%>
                         </a>
                     </div>
                     <% } else { %>
-                    <a href="/indextv/discover/<%=genre.name%>/<%=genre.id%>/1"><img src="/images/<%=imageList[genre.name]%>"></a>
+                    <a href="/indextv/discover/<%=name%>/<%=id%>/1"><img src="/images/<%=imageList[name]%>"></a>
                     <div class="link">
-                        <a href="/indextv/discover/<%=genre.name%>/<%=genre.id%>/1" style="color: #fff;">
-                            <%=genre.name%>
+                        <a href="/indextv/discover/<%=name%>/<%=id%>/1" style="color: #fff;">
+                            <%=name%>
                         </a>
                     </div>
                     <% } %>
