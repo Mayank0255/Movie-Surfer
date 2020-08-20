@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     res.render('landing');
 });
 
-router.get('/index', (req, res) => {
+router.get('/movie', (req, res) => {
     request(API_URL + MOVIE_GENRE_URL, (error, response, body) => {
         if (!error && response.statusCode === 200) {
             const genreNames = JSON.parse(body);
@@ -17,7 +17,7 @@ router.get('/index', (req, res) => {
     });
 });
 
-router.get('/indextv', (req, res) => {
+router.get('/tv', (req, res) => {
     request(API_URL + TV_GENRE_URL, (error, response, body) => {
         if (!error && response.statusCode === 200) {
             const genreNames = JSON.parse(body);
