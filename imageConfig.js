@@ -1,44 +1,31 @@
-const images = [
-    { url: "ACTION.jpg" },
-    { url: "ADVENTURE.jpg" },
-    { url: "ANIMATION.jpg" },
-    { url: "COMEDY.jpg" },
-    { url: "CRIME.jpg" },
-    { url: "DOCUMENTARY.jpg" },
-    { url: "DRAMA.jpg" },
-    { url: "FAMILY.jpg" },
-    { url: "FANTASY.jpg" },
-    { url: "HISTORY.jpg" },
-    { url: "HORROR.jpg" },
-    { url: "MUSIC.jpg" },
-    { url: "MYSTERY.jpg" },
-    { url: "ROMANCE.jpg" },
-    { url: "SCIENCE.jpg" },
-    { url: "TVMOVIE.jpg" },
-    { url: "THRILLER.jfif" },
-    { url: "WAR.jpg" },
-    { url: "WESTERN.jpg" }
-];
-const imagesTv = [
-    { url: "ADVENTURE.jpg" },
-    { url: "ANIMATION.jpg" },
-    { url: "COMEDY.jpg" },
-    { url: "CRIME.jpg" },
-    { url: "DOCUMENTARY.jpg" },
-    { url: "DRAMA.jpg" },
-    { url: "FAMILY.jpg" },
-    { url: "KIDS.jfif" },
-    { url: "MYSTERY.jpg" },
-    { url: "NEWS.jpg" },
-    { url: "REALITY.jpg" },
-    { url: "SCIENCE.jpg" },
-    { url: "SOAP.jpg" },
-    { url: "TALK.jpg" },
-    { url: "WAR.jpg" },
-    { url: "WESTERN.jpg" }
-];
-
-module.exports = {
-    images,
-    imagesTv
+const imageList = {
+    'Action': 'ACTION.jpg',
+    'Adventure': 'ADVENTURE.jpg',
+    'Animation': 'ANIMATION.jpg',
+    'Comedy': 'COMEDY.jpg',
+    'Crime': 'CRIME.jpg',
+    'Documentary': 'DOCUMENTARY.jpg',
+    'Drama': 'DRAMA.jpg',
+    'Family': 'FAMILY.jpg',
+    'Fantasy': 'FANTASY.jpg',
+    'History': 'HISTORY.jpg',
+    'Horror': 'HORROR.jpg',
+    'Music': 'MUSIC.jpg',
+    'Mystery': 'MYSTERY.jpg',
+    'Romance': 'ROMANCE.jpg',
+    'Science Fiction': 'SCIENCE.jpg',
+    'TV Movie': 'TVMOVIE.jpg',
+    'Thriller': 'THRILLER.jfif',
+    'War': 'WAR.jpg',
+    'Western': 'WESTERN.jpg',
+    'Action & Adventure': 'ADVENTURE.jpg',
+    'Kids': 'KIDS.jfif',
+    'News': 'NEWS.jpg',
+    'Reality': 'REALITY.jpg',
+    'Sci-Fi & Fantasy': 'SCIENCE.jpg',
+    'Soap': 'SOAP.jpg',
+    'Talk': 'TALK.jpg',
+    'War & Politics': 'WAR.jpg'
 };
+
+module.exports = imageList;
