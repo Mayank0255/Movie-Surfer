@@ -32,3 +32,11 @@ An inspiration of websites like IMDB &amp; Rotten Tomatoes
     ```
     npm start (run the server)
     ```
+
+## DEMO
+
+#### IMAGES:
+
+<img src="/demo/images/1.webp" width=340px /><img src="/demo/images/2.webp" width=340px />
+<img src="/demo/images/3.webp" width=340px /><img src="/demo/images/4.webp" width=340px />
+<img src="/demo/images/5.webp" width=340px /><img src="/demo/images/6.webp" width=340px />
