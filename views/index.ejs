@@ -20,25 +20,25 @@
         </div>
         <br>
         <div class="gallery">
-            <% for(i=0;i<genreNames.genres.length;i++){%>
-                <div class="genretabs" id="<%=genreNames.genres[i].id%>" onmouseover="hovergenrein(<%=genreNames.genres[i].id%>)" onmouseout="hovergenreout(<%= genreNames.genres[i].id %>)">
+            <% genreNames.genres.forEach(( genre ) => { %>
+                <div class="genretabs" id="<%=genre.id%>" onmouseover="hovergenrein(<%=genre.id%>)" onmouseout="hovergenreout(<%= genre.id %>)">
                     <% if (type === 'movie') { %>
-                        <a href="/index/discover/<%=genreNames.genres[i].name%>/<%=genreNames.genres[i].id%>/1"><img src="/images/<%=imageList[genreNames.genres[i].name]%>"></a>
-                        <div class="link">
-                            <a href="/index/discover/<%=genreNames.genres[i].name%>/<%=genreNames.genres[i].id%>/1" style="color: #ffffff;">
-                                <%=genreNames.genres[i].name%>
-                            </a>
-                        </div>
+                    <a href="/index/discover/<%=genre.name%>/<%=genre.id%>/1"><img src="/images/<%=imageList[genre.name]%>"></a>
+                    <div class="link">
+                        <a href="/index/discover/<%=genre.name%>/<%=genre.id%>/1" style="color: #ffffff;">
+                            <%=genre.name%>
+                        </a>
+                    </div>
                     <% } else { %>
-                        <a href="/indextv/discover/<%=genreNames.genres[i].name%>/<%=genreNames.genres[i].id%>/1"><img src="/images/<%=imageList[genreNames.genres[i].name]%>"></a>
-                        <div class="link">
-                            <a href="/indextv/discover/<%=genreNames.genres[i].name%>/<%=genreNames.genres[i].id%>/1" style="color: #fff;">
-                                <%=genreNames.genres[i].name%>
-                            </a>
-                        </div>
+                    <a href="/indextv/discover/<%=genre.name%>/<%=genre.id%>/1"><img src="/images/<%=imageList[genre.name]%>"></a>
+                    <div class="link">
+                        <a href="/indextv/discover/<%=genre.name%>/<%=genre.id%>/1" style="color: #fff;">
+                            <%=genre.name%>
+                        </a>
+                    </div>
                     <% } %>
                 </div>
-                <%} %>
+            <% }) %>
         </div>
     </div>
 
