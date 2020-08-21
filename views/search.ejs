@@ -12,16 +12,16 @@
     <div class='row' style='padding: 10px; padding-right: 15px;' id='<%= data.id %>' onmouseover='hoverpanelin(<%= data.id %>)' onmouseout='hoverpanelout(<%= data.id %>)'>
         <% if (data.media_type=='movie') { %>
             <div class='col-lg-4 col-sm-6' style='border-top-left-radius: 4px; border-bottom-left-radius: 4px;'>
-                <a href='/index/discover/<%= data.id %>/show'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
+                <a href='/movie/show/<%= data.id %>'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
             </div>
             <div class='col-lg-8 col-sm-6 content' style='padding-left: 20px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; '>
-                <a style='color: #00c8ff;' href='/index/discover/<%= data.id %>/show'>
+                <a style='color: #00c8ff;' href='/movie/show/<%= data.id %>'>
         <% } else if(data.media_type=='tv') { %>
                     <div class='col-lg-4 col-sm-6'>
-                        <a href='/indextv/discover/<%= data.id %>/show'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
+                        <a href='/tv/show/<%= data.id %>'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
                     </div>
                     <div class='col-lg-8 col-sm-6 content' style='padding-left: 20px;'>
-                        <a style='color: #00c8ff;' href='/indextv/discover/<%= data.id %>/show'>
+                        <a style='color: #00c8ff;' href='/tv/show/<%= data.id %>'>
         <% } %>
                             <h5>
                                 <% if(data.media_type=='movie'){ %>
