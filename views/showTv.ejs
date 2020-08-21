@@ -1,28 +1,28 @@
 <% include partials/header %>
 
-    <div class="container" style="background-color: #001d26; padding-top: 12px; padding-bottom: 12px; padding-right: 20px;">
-        <div class="row" style="padding-right: 15px;">
-            <div class="col-xl-5 col-md-6">
-                <img class="movieposter" src="http://image.tmdb.org/t/p/original<%=data.poster_path%>">
+    <div class='container' style='background-color: #001d26; padding-top: 12px; padding-bottom: 12px; padding-right: 20px;'>
+        <div class='row' style='padding-right: 15px;'>
+            <div class='col-xl-5 col-md-6'>
+                <img class='movieposter' src='http://image.tmdb.org/t/p/original<%=data.poster_path%>'>
             </div>
-            <div class="col-xl-7 col-md-6 moviecontent" style="padding-left: 20px ; padding-right: 20px;">
+            <div class='col-xl-7 col-md-6 moviecontent' style='padding-left: 20px ; padding-right: 20px;'>
                 <h3>
                     <%=data.name%>&nbsp&nbsp(
                         <%=data.first_air_date.substring(0,4)%> )
-                            <a title="Add to WatchList" style="color: #00c8ff;" href="#"><img style="width: 40px; float: right;" src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698367-icon-19-bookmark-add-512.png"></a>
+                            <a title='Add to WatchList' style='color: #00c8ff;' href='#'><img style='width: 40px; float: right;' src='https://cdn1.iconfinder.com/data/icons/hawcons/32/698367-icon-19-bookmark-add-512.png'></a>
                 </h3>
                 <br>
-                <h5 style="display: inline;">Status &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
-                <h5 class="status" style="display: inline; color: #ffffff;">
+                <h5 style='display: inline;'>Status &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+                <h5 class='status' style='display: inline; color: #ffffff;'>
                     <%=data.status%>
                 </h5>
-                <h5 class="duration">Duration &nbsp&nbsp&nbsp&nbsp&nbsp</h5>
-                <h5 class="runtime" style=" color: #ffffff;">
+                <h5 class='duration'>Duration &nbsp&nbsp&nbsp&nbsp&nbsp</h5>
+                <h5 class='runtime' style=' color: #ffffff;'>
                     <%=data.episode_run_time%> mins
                 </h5>
                 <br>
                 <br>
-                <h5 style="color: #39FF14; display: inline;">User Score&nbsp&nbsp&nbsp&nbsp
+                <h5 style='color: #39FF14; display: inline;'>User Score&nbsp&nbsp&nbsp&nbsp
                     <%=data.vote_average%>&nbsp&nbsp&nbsp
                 </h5>
                 <br>
@@ -30,32 +30,32 @@
 
                 <br>
                 <h5>Overview</h5>
-                <p style="color: #ffffff; padding-right: 20px;">
+                <p style='color: #ffffff; padding-right: 20px;'>
                     <%=data.overview%>
                 </p>
                 <br>
 
             </div>
-            <div style="margin-top: 25px;" class="col-md-4 col-sm-5 col-6 sectionls">
+            <div style='margin-top: 25px;' class='col-md-4 col-sm-5 col-6 sectionls'>
                 <h5>Total Seasons </h5>
                 <br>
-                <h5 style=" margin-top: 5px;">Total Episodes </h5>
+                <h5 style='margin-top: 5px;'>Total Episodes </h5>
                 <br>
                 <br>
                 <h5>Production Companies</h5>
             </div>
-            <div style="margin-top: 25px;" class="col-md-4 col-sm-5 col-6 sectionrs">
-                <h5 style="color: #ffffff;">
+            <div style='margin-top: 25px;' class='col-md-4 col-sm-5 col-6 sectionrs'>
+                <h5 style='color: #ffffff;'>
                     <%=data.number_of_seasons%>
                 </h5>
                 <br>
-                <h5 style=" color: #ffffff;">
+                <h5 style='color: #ffffff;'>
                     <%=data.number_of_episodes%>
                 </h5>
                 <br>
                 <br>
                 <%data.production_companies.forEach(comp => {%>
-                    <h6 style="color: #ffffff; font-size: 18px;">
+                    <h6 style='color: #ffffff; font-size: 18px;'>
                         <%=comp.name%>
                     </h6>
                     <%});%>

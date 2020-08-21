@@ -1,56 +1,56 @@
 <% include partials/header %>
 
-    <div class="container" style="background-color: #001d26; padding-top: 12px; padding-bottom: 30px; padding-right: 15px;">
+    <div class='container' style='background-color: #001d26; padding-top: 12px; padding-bottom: 30px; padding-right: 15px;'>
         <div>
             <% if (type === 'discover') { %>
-                <h3 style="display: inline-block;">
+                <h3 style='display: inline-block;'>
                     <%=genre_name%> Genre &nbsp
                 </h3>
-                <h5 style="color: #ffffff; display: inline-block; margin-bottom: 20px;"> Based On Popularity ↓ </h5>
+                <h5 style='color: #ffffff; display: inline-block; margin-bottom: 20px;'> Based On Popularity ↓ </h5>
             <% } else if (type === 'pop movie') { %>
-                <h3 style="display: inline-block;"> Most Popular Movies &nbsp </h3>
+                <h3 style='display: inline-block;'> Most Popular Movies &nbsp </h3>
             <% } else { %>
-                <h3 style="display: inline-block;"> Top Rated Movies &nbsp</h3>
+                <h3 style='display: inline-block;'> Top Rated Movies &nbsp</h3>
             <% } %>
         </div>
         <% data.results.forEach(data => { %>
-            <div class="row" style="padding: 10px; padding-right: 15px;" id="<%= data.id %>" onmouseover="hoverpanelin(<%= data.id %>)" onmouseout="hoverpanelout(<%= data.id %>)">
-                <div class="col-lg-4 col-sm-6" style="border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
-                    <a href="/index/discover/<%= data.id %>/show"><img class="poster" src="http://image.tmdb.org/t/p/w342<%=data.poster_path%>"></a>
+            <div class='row' style='padding: 10px; padding-right: 15px;' id='<%= data.id %>' onmouseover='hoverpanelin(<%= data.id %>)' onmouseout='hoverpanelout(<%= data.id %>)'>
+                <div class='col-lg-4 col-sm-6' style='border-top-left-radius: 4px; border-bottom-left-radius: 4px;'>
+                    <a href='/index/discover/<%= data.id %>/show'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
                 </div>
-                <div class="col-lg-8 col-sm-6 content" style="padding-left: 20px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
-                    <a style="color: #00c8ff;" href="/index/discover/<%= data.id %>/show">
-                        <h5 style="display: inline;">
+                <div class='col-lg-8 col-sm-6 content' style='padding-left: 20px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;'>
+                    <a style='color: #00c8ff;' href='/index/discover/<%= data.id %>/show'>
+                        <h5 style='display: inline;'>
                             <%=data.title%>
                         </h5>
                     </a>&nbsp
-                    <h5 style="color: #00c8ff; display: inline;">(
+                    <h5 style='color: #00c8ff; display: inline;'>(
                         <%=data.release_date.substring(0,4)%> )</h5>
 
-                    <p style="color: #39FF14;; padding: 3px; padding-left: 0; border-radius: 3px; border:1px solid #001d26; margin-top: 3px;">User Score&nbsp&nbsp&nbsp
+                    <p style='color: #39FF14;; padding: 3px; padding-left: 0; border-radius: 3px; border:1px solid #001d26; margin-top: 3px;'>User Score&nbsp&nbsp&nbsp
                         <%=data.vote_average%>
                     </p>
                     <br>
                     <h6>Overview</h6>
-                    <p style="color: #ffffff;">
+                    <p style='color: #ffffff;'>
                         <%=data.overview.substring(0,250)%> ...</p>
                 </div>
             </div>
-            <hr style="background-color: #00c8ff; margin: 0px;">
+            <hr style='background-color: #00c8ff; margin: 0px;'>
             <% }); %>
-                <div style="text-align: center;">
+                <div style='text-align: center;'>
                     <%if(page==1){%>
                         <% for(var i=parseInt(page);i<parseInt(page)+7;i++){%>
                             <% if (type === 'discover') { %>
-                            <a class="btn btn-sm btn-outline-primary" href="/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>">
+                            <a class='btn btn-sm btn-outline-primary' href='/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>'>
                                 <%=i%>
                             </a>
                             <% } else if (type === 'pop movie') { %>
-                            <a class="btn btn-sm btn-outline-primary" href="/index/discover/pop/<%=i%>">
+                            <a class='btn btn-sm btn-outline-primary' href='/index/discover/pop/<%=i%>'>
                                 <%=i%>
                             </a>
                             <% } else { %>
-                            <a class="btn btn-sm btn-outline-primary" href="/index/discover/top/<%=i%>">
+                            <a class='btn btn-sm btn-outline-primary' href='/index/discover/top/<%=i%>'>
                                 <%=i%>
                             </a>
                             <% } %>
@@ -58,15 +58,15 @@
                                 <%} else if(page>1){%>
                                     <% for(var i=parseInt(page)-1;i<parseInt(page)+6;i++){%>
                                 <% if (type === 'discover') { %>
-                                <a class="btn btn-sm btn-outline-primary" href="/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>">
+                                <a class='btn btn-sm btn-outline-primary' href='/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>'>
                                     <%=i%>
                                 </a>
                                 <% } else if (type === 'pop movie') { %>
-                                <a class="btn btn-sm btn-outline-primary" href="/index/discover/pop/<%=i%>">
+                                <a class='btn btn-sm btn-outline-primary' href='/index/discover/pop/<%=i%>'>
                                     <%=i%>
                                 </a>
                                 <% } else { %>
-                                <a class="btn btn-sm btn-outline-primary" href="/index/discover/top/<%=i%>">
+                                <a class='btn btn-sm btn-outline-primary' href='/index/discover/top/<%=i%>'>
                                     <%=i%>
                                 </a>
                                 <% } %>
