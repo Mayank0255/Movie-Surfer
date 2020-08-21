@@ -37,6 +37,6 @@ An inspiration of websites like IMDB &amp; Rotten Tomatoes
 
 #### IMAGES:
 
-<img src="/demo/images/1.webp" width=340px /><img src="/demo/images/2.webp" width=340px />
-<img src="/demo/images/3.webp" width=340px /><img src="/demo/images/4.webp" width=340px />
-<img src="/demo/images/5.webp" width=340px /><img src="/demo/images/6.webp" width=340px />
+<img src="/demo/1.webp" width=340px /><img src="/demo/2.webp" width=340px />
+<img src="/demo/3.webp" width=340px /><img src="/demo/4.webp" width=340px />
+<img src="/demo/5.webp" width=340px /><img src="/demo/6.webp" width=340px />
