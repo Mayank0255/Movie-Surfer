@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
-const imageList = require('../../config/image.config');
-const { API_URL, MOVIE_GENRE_URL, TV_GENRE_URL } = require('../constants/index');
+const imageList = require('../config/image.config');
+const { API_URL, MOVIE_GENRE_URL, TV_GENRE_URL } = require('../constants');
 
 router.get('/', (req, res) => {
     res.render('landing');

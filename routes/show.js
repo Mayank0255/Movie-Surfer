@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
-const { API_URL, API_KEY_URL } = require('../constants/index');
+const { API_URL, API_KEY_URL } = require('../constants');
 
 router.get('/indextv/discover/:tv_id/show', (req, res) => {
     const { tv_id } = req.params;

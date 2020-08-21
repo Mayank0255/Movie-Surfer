@@ -42,10 +42,10 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(require('./server/routes/index'));
-app.use(require('./server/routes/discover'));
-app.use(require('./server/routes/show'));
-app.use(require('./server/routes/auth'));
+app.use(require('./routes/index'));
+app.use(require('./routes/discover'));
+app.use(require('./routes/show'));
+app.use(require('./routes/auth'));
 
 const port = process.env.PORT || 1000;
 

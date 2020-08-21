@@ -1,4 +1,4 @@
-const { API_KEY } = require('../../config/config');
+const { API_KEY } = require('./config/config');
 
 const API_URL = 'https://api.themoviedb.org/3';
 
