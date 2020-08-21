@@ -10,8 +10,6 @@
                     <%=data.title%>&nbsp&nbsp(
                         <%=data.release_date.substring(0,4)%> )
                             <a title="Add to WatchList" style="color: #00c8ff;" href="#"><img style="width: 40px; float: right;" src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698367-icon-19-bookmark-add-512.png"></a>
-                            <script>
-                            </script>
                 </h3>
 
                 <br>
@@ -40,11 +38,11 @@
 
             </div>
             <div style="margin-top: 25px;" class="col-md-4 col-sm-5 col-6 sectionls">
-                <%if(data.budget!=0){%>
+                <%if (data.budget!=0) {%>
                     <h5>Budget </h5>
                     <br>
                     <%}%>
-                        <%if(data.budget!=0){%>
+                        <%if (data.budget!=0) {%>
                             <h5 style=" margin-top: 5px;">Revenue </h5>
                             <br>
                             <%}%>
@@ -55,28 +53,28 @@
                                 <h5>Production Companies</h5>
             </div>
             <div style="margin-top: 25px;" class="col-md-4 col-sm-5 col-6 sectionrs">
-                <%if(data.budget!=0){%>
+                <%if (data.budget!=0) {%>
                     <h5 style="color: #ffffff;">
                         $
                         <%=data.budget.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');%>
                     </h5>
                     <br>
                     <%}%>
-                        <%if(data.budget!=0){%>
+                        <%if (data.budget!=0) {%>
                             <h5 style=" color: #ffffff;">
                                 $
                                 <%=data.revenue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');%>
                             </h5>
                             <br>
                             <%}%>
-                                <%data.spoken_languages.forEach((lang) => {%>
+                                <%data.spoken_languages.forEach(lang => {%>
                                     <h6 style="color: #ffffff; font-size: 18px;">
                                         <%=lang.name%>
                                     </h6>
                                     <%});%>
                                         <br>
                                         <br>
-                                        <%data.production_companies.forEach((comp) => {%>
+                                        <%data.production_companies.forEach(comp => {%>
                                             <h6 style="color: #ffffff; font-size: 18px;">
                                                 <%=comp.name%>
                                             </h6>

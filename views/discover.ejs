@@ -13,7 +13,7 @@
                 <h3 style="display: inline-block;"> Top Rated Movies &nbsp</h3>
             <% } %>
         </div>
-        <% data.results.forEach((data) => { %>
+        <% data.results.forEach(data => { %>
             <div class="row" style="padding: 10px; padding-right: 15px;" id="<%= data.id %>" onmouseover="hoverpanelin(<%= data.id %>)" onmouseout="hoverpanelout(<%= data.id %>)">
                 <div class="col-lg-4 col-sm-6" style="border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
                     <a href="/index/discover/<%= data.id %>/show"><img class="poster" src="http://image.tmdb.org/t/p/w342<%=data.poster_path%>"></a>
