@@ -9,7 +9,7 @@
         </h4>
     </div>
     <% data.results.forEach(data => { %>
-    <div class='row' style='padding: 10px; padding-right: 15px;' id='<%= data.id %>' onmouseover='hoverpanelin(<%= data.id %>)' onmouseout='hoverpanelout(<%= data.id %>)'>
+    <div class='row' style='padding: 10px; padding-right: 15px;' id='<%= data.id %>' onmouseover='hoverPanelIn(<%= data.id %>)' onmouseout='hoverPanelOut(<%= data.id %>)'>
         <% if (data.media_type=='movie') { %>
             <div class='col-lg-4 col-sm-6' style='border-top-left-radius: 4px; border-bottom-left-radius: 4px;'>
                 <a href='/movie/show/<%= data.id %>'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>

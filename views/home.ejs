@@ -20,7 +20,7 @@
         <br>
         <div class='gallery'>
             <% genreNames.genres.forEach(({ id, name }) => { %>
-                <div class='genretabs' id='<%=id%>' onmouseover='hovergenrein(<%=id%>)' onmouseout='hovergenreout(<%= id %>)'>
+                <div class='genretabs' id='<%=id%>' onmouseover='hoverGenreIn(<%=id%>)' onmouseout='hoverGenreOut(<%= id %>)'>
                     <% if (type === 'movie') { %>
                     <a href='/movie/discover/<%=name%>/<%=id%>/1'>
                         <img src='/images/<%=imageList[name]%>'>
