@@ -52,13 +52,13 @@
             <div style='text-align: center;'>
                 <%if(page==1){%>
                     <% for(var i=parseInt(page);i<parseInt(page)+7;i++){%>
-                    <a class='btn btn-sm btn-outline-primary' href='/index/search/<%=i%>?search=<%=query%>'>
+                    <a class='btn btn-sm btn-outline-primary' href='/search/<%=i%>?search=<%=query%>'>
                         <%=i%>
                     </a>
                     <%}%>
                 <%} else if(page>1){%>
                     <% for(var i=parseInt(page)-1;i<parseInt(page)+6;i++){%>
-                        <a class='btn btn-sm btn-outline-primary' href='/index/search/<%=i%>?search=<%=query%>'>
+                        <a class='btn btn-sm btn-outline-primary' href='/search/<%=i%>?search=<%=query%>'>
                             <%=i%>
                         </a>
                     <%}%>

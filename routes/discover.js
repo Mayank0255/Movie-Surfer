@@ -3,7 +3,7 @@ const router = express.Router();
 const request = require('request');
 const { API_URL, API_KEY_URL } = require('../constants');
 
-router.get('/index/discover/:genre_name/:genre_id/:page', (req, res) => {
+router.get('/movie/discover/:genre_name/:genre_id/:page', (req, res) => {
     const { genre_id, genre_name, page } = req.params;
 
     request(API_URL + `/discover/movie${API_KEY_URL}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genre_id}`,
@@ -15,7 +15,7 @@ router.get('/index/discover/:genre_name/:genre_id/:page', (req, res) => {
         });
 });
 
-router.get('/indextv/discover/:genre_name/:genre_id/:page', (req, res) => {
+router.get('/tv/discover/:genre_name/:genre_id/:page', (req, res) => {
     const { genre_id, genre_name, page } = req.params;
 
     request(API_URL + `/discover/tv${API_KEY_URL}&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&with_genres=${genre_id}&include_null_first_air_dates=false`,
@@ -30,7 +30,7 @@ router.get('/indextv/discover/:genre_name/:genre_id/:page', (req, res) => {
 // ====================================================== MOST POPULAR AND TOP RATED =====================================================
 
 // MOST POPULAR MOVIES
-router.get('/index/discover/pop/:page', (req, res) => {
+router.get('/movie/discover/pop/:page', (req, res) => {
     const { page } = req.params;
     request(API_URL + `/movie/popular${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
@@ -42,7 +42,7 @@ router.get('/index/discover/pop/:page', (req, res) => {
 });
 
 // TOP RATED MOVIES
-router.get('/index/discover/top/:page', (req, res) => {
+router.get('/movie/discover/top/:page', (req, res) => {
     const { page } = req.params;
     request(API_URL + `/movie/top_rated${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
@@ -55,7 +55,7 @@ router.get('/index/discover/top/:page', (req, res) => {
 
 // MOST POPULAR TV SHOWS
 
-router.get('/indextv/discover/pop/:page', (req, res) => {
+router.get('/tv/discover/pop/:page', (req, res) => {
     const { page } = req.params;
     request(API_URL + `/tv/popular${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
@@ -68,7 +68,7 @@ router.get('/indextv/discover/pop/:page', (req, res) => {
 
 // TOP RATED TV SHOWS
 
-router.get('/indextv/discover/top/:page', (req, res) => {
+router.get('/tv/discover/top/:page', (req, res) => {
     const { page } = req.params;
     request(API_URL + `/tv/top_rated${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
@@ -82,7 +82,7 @@ router.get('/indextv/discover/top/:page', (req, res) => {
 
 // ======================================================= SEARCH PAGE ===================================================================
 
-router.get('/index/search/:page', (req, res) => {
+router.get('/search/:page', (req, res) => {
     const { search, page } = req.query;
 
     request(API_URL + `/search/multi${API_KEY_URL}&query=${search}&page=${page}&include_adult=false`,

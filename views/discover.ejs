@@ -42,15 +42,15 @@
                     <%if(page==1){%>
                         <% for(var i=parseInt(page);i<parseInt(page)+7;i++){%>
                             <% if (type === 'discover') { %>
-                            <a class='btn btn-sm btn-outline-primary' href='/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>'>
+                            <a class='btn btn-sm btn-outline-primary' href='/movie/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>'>
                                 <%=i%>
                             </a>
                             <% } else if (type === 'pop movie') { %>
-                            <a class='btn btn-sm btn-outline-primary' href='/index/discover/pop/<%=i%>'>
+                            <a class='btn btn-sm btn-outline-primary' href='/movie/discover/pop/<%=i%>'>
                                 <%=i%>
                             </a>
                             <% } else { %>
-                            <a class='btn btn-sm btn-outline-primary' href='/index/discover/top/<%=i%>'>
+                            <a class='btn btn-sm btn-outline-primary' href='/movie/discover/top/<%=i%>'>
                                 <%=i%>
                             </a>
                             <% } %>
@@ -58,15 +58,15 @@
                                 <%} else if(page>1){%>
                                     <% for(var i=parseInt(page)-1;i<parseInt(page)+6;i++){%>
                                 <% if (type === 'discover') { %>
-                                <a class='btn btn-sm btn-outline-primary' href='/index/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>'>
+                                <a class='btn btn-sm btn-outline-primary' href='/movie/discover/<%=genre_name%>/<%=genre_id%>/<%=i%>'>
                                     <%=i%>
                                 </a>
                                 <% } else if (type === 'pop movie') { %>
-                                <a class='btn btn-sm btn-outline-primary' href='/index/discover/pop/<%=i%>'>
+                                <a class='btn btn-sm btn-outline-primary' href='/movie/discover/pop/<%=i%>'>
                                     <%=i%>
                                 </a>
                                 <% } else { %>
-                                <a class='btn btn-sm btn-outline-primary' href='/index/discover/top/<%=i%>'>
+                                <a class='btn btn-sm btn-outline-primary' href='/movie/discover/top/<%=i%>'>
                                     <%=i%>
                                 </a>
                                 <% } %>
