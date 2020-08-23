@@ -3,15 +3,14 @@
     <div class='container' style='background-color: #001d26; padding-top: 12px; padding-bottom: 30px; padding-right: 15px;'>
         <div>
             <% if (type === 'discover') { %>
-            <h3 style='display: inline-block;'>
-                <%=genre_name%> Genre &nbsp</h3>
-            <h5 style='color: #ffffff; display: inline-block; margin-bottom: 20px;'> Based On Popularity ↓ </h5>
+                <h3 style='display: inline-block;'>
+                    <%=genre_name%> Genre &nbsp
+                </h3>
+                <h5 style='color: #ffffff; display: inline-block; margin-bottom: 20px;'> Based On Popularity ↓ </h5>
             <% } else if (type === 'pop') { %>
-                <h3 style='display: inline-block;'>
-                    Most Popular TV Shows &nbsp</h3>
+                <h3 style='display: inline-block;'> Most Popular <%=media_type === 'tv' ? 'TV Shows' : 'Movies'%> &nbsp </h3>
             <% } else { %>
-                <h3 style='display: inline-block;'>
-                    Top Rated TV Shows &nbsp</h3>
+                <h3 style='display: inline-block;'> Top Rated <%=media_type === 'tv' ? 'TV Shows' : 'Movies'%> &nbsp</h3>
             <% } %>
         </div>
         <% data.results.forEach(data => { %>
@@ -38,22 +37,10 @@
             <% }); %>
                 <div style='text-align: center;'>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <% if (type === 'discover') { %>
-                            <% if (page !== 1) { %>
-                            <a type="button" class="btn btn-outline-primary" href="/tv/discover/<%=genre_name%>/<%=genre_id%>?page=<%=page - 1%>">Prev</a>
-                            <% }%>
-                            <a type="button" class="btn btn-outline-primary" href="/tv/discover/<%=genre_name%>/<%=genre_id%>?page=<%=page + 1%>">Next</a>
-                        <% } else if (type === 'pop') { %>
-                            <% if (page !== 1) { %>
-                                <a type="button" class="btn btn-outline-primary" href="/tv/discover/pop?page=<%= page - 1 %>">Prev</a>
-                            <% } %>
-                            <a type="button" class="btn btn-outline-primary" href="/tv/discover/pop?page=<%= page + 1 %>">Next</a>
-                        <% } else { %>
-                            <% if (page !== 1) { %>
-                                <a type="button" class="btn btn-outline-primary" href="/tv/discover/top?page=<%= page - 1 %>">Prev</a>
-                            <% } %>
-                            <a type="button" class="btn btn-outline-primary" href="/tv/discover/top?page=<%= page + 1 %>">Next</a>
-                        <% } %>
+                        <% if (page !== 1) { %>
+                        <a type="button" class="btn btn-outline-primary" href="<%=pathname%>?page=<%=page - 1%>">Prev</a>
+                        <% }%>
+                        <a type="button" class="btn btn-outline-primary" href="<%=pathname%>?page=<%=page + 1%>">Next</a>
                     </div>
                 </div>
     </div>

@@ -6,6 +6,7 @@ const { API_URL, API_KEY_URL } = require('../constants');
 router.get('/movie/discover/:genre_name/:genre_id', (req, res) => {
     const { genre_id, genre_name } = req.params;
     const page = req.query.page;
+    const pathname = req._parsedUrl.pathname;
 
     request(API_URL + `/discover/movie${API_KEY_URL}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genre_id}`,
         (error, response, body) => {
@@ -17,7 +18,8 @@ router.get('/movie/discover/:genre_name/:genre_id', (req, res) => {
                     genre_name: genre_name,
                     genre_id: genre_id,
                     page: +page,
-                    media_type: 'movie'
+                    media_type: 'movie',
+                    pathname: pathname
                 });
             }
         });
@@ -26,6 +28,7 @@ router.get('/movie/discover/:genre_name/:genre_id', (req, res) => {
 router.get('/tv/discover/:genre_name/:genre_id', (req, res) => {
     const { genre_id, genre_name } = req.params;
     const page = req.query.page;
+    const pathname = req._parsedUrl.pathname;
 
     request(API_URL + `/discover/tv${API_KEY_URL}&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&with_genres=${genre_id}&include_null_first_air_dates=false`,
         (error, response, body) => {
@@ -37,7 +40,8 @@ router.get('/tv/discover/:genre_name/:genre_id', (req, res) => {
                     genre_name: genre_name,
                     genre_id: genre_id,
                     page: +page,
-                    media_type: 'tv'
+                    media_type: 'tv',
+                    pathname: pathname
                 });
             }
         });
