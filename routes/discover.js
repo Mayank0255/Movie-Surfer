@@ -16,7 +16,8 @@ router.get('/movie/discover/:genre_name/:genre_id', (req, res) => {
                     type: 'discover',
                     genre_name: genre_name,
                     genre_id: genre_id,
-                    page: +page
+                    page: +page,
+                    media_type: 'movie'
                 });
             }
         });
@@ -35,7 +36,8 @@ router.get('/tv/discover/:genre_name/:genre_id', (req, res) => {
                     type: 'discover',
                     genre_name: genre_name,
                     genre_id: genre_id,
-                    page: +page
+                    page: +page,
+                    media_type: 'tv'
                 });
             }
         });
@@ -51,7 +53,12 @@ router.get('/movie/discover/pop', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discover', { data: data, type: 'pop movie', page: +page });
+                res.render('discover', {
+                    data: data,
+                    type: 'pop',
+                    page: +page,
+                    media_type: 'movie'
+                });
             }
         });
 });
@@ -64,7 +71,12 @@ router.get('/movie/discover/top', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discover', { data: data, type: 'top movie', page: +page });
+                res.render('discover', {
+                    data: data,
+                    type: 'top',
+                    page: +page,
+                    media_type: 'movie'
+                });
             }
         });
 });
@@ -78,7 +90,12 @@ router.get('/tv/discover/pop', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discoverTv', { data: data, type: 'pop tv', page: +page });
+                res.render('discoverTv', {
+                    data: data,
+                    type: 'pop',
+                    page: +page,
+                    media_type: 'tv'
+                });
             }
         });
 });
@@ -92,7 +109,12 @@ router.get('/tv/discover/top', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discoverTv', { data: data, type: 'top tv', page: +page });
+                res.render('discoverTv', {
+                    data: data,
+                    type: 'top',
+                    page: +page,
+                    media_type: 'tv'
+                });
             }
         });
 });
@@ -108,7 +130,11 @@ router.get('/search/:page', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('search', { data: data, query: search, page: +page });
+                res.render('search', {
+                    data: data,
+                    query: search,
+                    page: +page
+                });
             }
         });
 });

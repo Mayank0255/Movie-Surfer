@@ -7,7 +7,7 @@
                     <%=genre_name%> Genre &nbsp
                 </h3>
                 <h5 style='color: #ffffff; display: inline-block; margin-bottom: 20px;'> Based On Popularity ↓ </h5>
-            <% } else if (type === 'pop movie') { %>
+            <% } else if (type === 'pop') { %>
                 <h3 style='display: inline-block;'> Most Popular Movies &nbsp </h3>
             <% } else { %>
                 <h3 style='display: inline-block;'> Top Rated Movies &nbsp</h3>
@@ -45,7 +45,7 @@
                                 <a type="button" class="btn btn-outline-primary" href="/movie/discover/<%=genre_name%>/<%=genre_id%>?page=<%=page - 1%>">Prev</a>
                             <% }%>
                             <a type="button" class="btn btn-outline-primary" href="/movie/discover/<%=genre_name%>/<%=genre_id%>?page=<%=page + 1%>">Next</a>
-                        <% } else if (type === 'pop movie') { %>
+                        <% } else if (type === 'pop') { %>
                             <% if (page !== 1) { %>
                                 <a type="button" class="btn btn-outline-primary" href="/movie/discover/pop?page=<%= page - 1 %>">Prev</a>
                             <% } %>
