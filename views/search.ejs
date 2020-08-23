@@ -24,11 +24,7 @@
                         <a style='color: #00c8ff;' href='/tv/show/<%= data.id %>'>
         <% } %>
                             <h5>
-                                <% if(data.media_type=='movie'){ %>
-                                <%=data.title%>
-                                <% } else{ %>
-                                <%=data.name%>
-                                <% } %>
+                                <%= data.media_type === 'movie' ? data.title : data.name%>
                         </a>&nbsp (
                         <% if(data.media_type=='movie'){ %>
                         <%=data.release_date.substring(0,4)%>
@@ -50,19 +46,12 @@
             <hr style='background-color: #00c8ff; margin :0px;'>
             <% }); %>
             <div style='text-align: center;'>
-                <%if(page==1){%>
-                    <% for(var i=parseInt(page);i<parseInt(page)+7;i++){%>
-                    <a class='btn btn-sm btn-outline-primary' href='/search/<%=i%>?search=<%=query%>'>
-                        <%=i%>
-                    </a>
-                    <%}%>
-                <%} else if(page>1){%>
-                    <% for(var i=parseInt(page)-1;i<parseInt(page)+6;i++){%>
-                        <a class='btn btn-sm btn-outline-primary' href='/search/<%=i%>?search=<%=query%>'>
-                            <%=i%>
-                        </a>
-                    <%}%>
-                <%}%>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <% if (page !== 1) { %>
+                        <a type="button" class="btn btn-outline-primary" href="/search/<%=page - 1%>?search=<%=query%>">Prev</a>
+                    <% }%>
+                    <a type="button" class="btn btn-outline-primary" href="/search/<%=page + 1%>?search=<%=query%>">Next</a>
+                </div>
             </div>
     </div>
 <% include partials/footer %>
