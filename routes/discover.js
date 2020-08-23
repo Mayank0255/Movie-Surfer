@@ -22,8 +22,9 @@ router.get('/movie/discover/:genre_name/:genre_id', (req, res) => {
         });
 });
 
-router.get('/tv/discover/:genre_name/:genre_id/:page', (req, res) => {
-    const { genre_id, genre_name, page } = req.params;
+router.get('/tv/discover/:genre_name/:genre_id', (req, res) => {
+    const { genre_id, genre_name } = req.params;
+    const page = req.query.page;
 
     request(API_URL + `/discover/tv${API_KEY_URL}&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&with_genres=${genre_id}&include_null_first_air_dates=false`,
         (error, response, body) => {
@@ -70,8 +71,9 @@ router.get('/movie/discover/top', (req, res) => {
 
 // MOST POPULAR TV SHOWS
 
-router.get('/tv/discover/pop/:page', (req, res) => {
-    const { page } = req.params;
+router.get('/tv/discover/pop', (req, res) => {
+    const page = req.query.page;
+
     request(API_URL + `/tv/popular${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
@@ -83,8 +85,9 @@ router.get('/tv/discover/pop/:page', (req, res) => {
 
 // TOP RATED TV SHOWS
 
-router.get('/tv/discover/top/:page', (req, res) => {
-    const { page } = req.params;
+router.get('/tv/discover/top', (req, res) => {
+    const page = req.query.page;
+
     request(API_URL + `/tv/top_rated${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
