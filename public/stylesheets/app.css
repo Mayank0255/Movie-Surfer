@@ -87,8 +87,16 @@ body {
     font-weight: bolder;
 }
 
-div>.formtab {
+div > .formtab {
     margin: 30px 240px;
+}
+
+.fc-color {
+    color: #00c8ff;
+}
+
+.bg-color {
+    background-color: #00c8ff;
 }
 
 @media (max-width:993px) {

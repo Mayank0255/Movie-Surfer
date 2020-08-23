@@ -1,34 +1,34 @@
 <% include partials/header %>
-<div class='container' style='background-color: #001d26; padding-top: 12px; padding-bottom: 30px; padding-right: 15px;'>
+<div class='container discover'>
     <div>
-        <h3 style='display: inline-block;'>
+        <h3 class='header'>
             Search Results of &nbsp
         </h3>
-        <h4 style='color: #ffffff; display: inline-block; margin-bottom: 20px;'>
+        <h4 class='secondary-header'>
             <%=query%>
         </h4>
     </div>
     <% data.results.forEach(data => { %>
-    <div class='row' style='padding: 10px; padding-right: 15px;' id='<%= data.id %>' onmouseover='hoverPanelIn(<%= data.id %>)' onmouseout='hoverPanelOut(<%= data.id %>)'>
-        <% if (data.media_type=='movie') { %>
-            <div class='col-lg-4 col-sm-6' style='border-top-left-radius: 4px; border-bottom-left-radius: 4px;'>
+    <div class='row item' id='<%= data.id %>' onmouseover='hoverPanelIn(<%= data.id %>)' onmouseout='hoverPanelOut(<%= data.id %>)'>
+        <% if (data.media_type === 'movie') { %>
+            <div class='col-lg-4 col-sm-6 left'>
                 <a href='/movie/show/<%= data.id %>'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
             </div>
-            <div class='col-lg-8 col-sm-6 content' style='padding-left: 20px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; '>
-                <a style='color: #00c8ff;' href='/movie/show/<%= data.id %>'>
-        <% } else if(data.media_type=='tv') { %>
-                    <div class='col-lg-4 col-sm-6'>
+            <div class='col-lg-8 col-sm-6 content'>
+                <a class='fc-color' href='/movie/show/<%= data.id %>'>
+        <% } else if(data.media_type === 'tv') { %>
+                    <div class='col-lg-4 col-sm-6 left'>
                         <a href='/tv/show/<%= data.id %>'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
                     </div>
-                    <div class='col-lg-8 col-sm-6 content' style='padding-left: 20px;'>
-                        <a style='color: #00c8ff;' href='/tv/show/<%= data.id %>'>
+                    <div class='col-lg-8 col-sm-6 content'>
+                        <a class='fc-color' href='/tv/show/<%= data.id %>'>
         <% } %>
                             <h5>
                                 <%= data.media_type === 'movie' ? data.title : data.name%>
                         </a>&nbsp (
-                        <% if(data.media_type=='movie'){ %>
+                        <% if(data.media_type === 'movie'){ %>
                         <%=data.release_date.substring(0,4)%>
-                        <% } else if(data.media_type=='tv'){ %>
+                        <% } else if(data.media_type === 'tv'){ %>
                         <%=data.first_air_date.substring(0,4)%>
                         <% } %>)
                         </h5>
@@ -37,7 +37,7 @@
                         </p>
                         <br>
                         <h6>Overview</h6>
-                        <% if(data.media_type=='movie' || data.media_type=='tv'){ %>
+                        <% if(data.media_type === 'movie' || data.media_type === 'tv'){ %>
                         <p style='color: #ffffff;'>
                             <%=data.overview.substring(0,250)%> ...</p>
                         <% } %>
