@@ -34,7 +34,7 @@ router.get('/tv/discover/:genre_name/:genre_id', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discoverTv', {
+                res.render('discover', {
                     data: data,
                     type: 'discover',
                     genre_name: genre_name,
@@ -52,6 +52,7 @@ router.get('/tv/discover/:genre_name/:genre_id', (req, res) => {
 // MOST POPULAR MOVIES
 router.get('/movie/discover/pop', (req, res) => {
     const page = req.query.page;
+    const pathname = req._parsedUrl.pathname;
 
     request(API_URL + `/movie/popular${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
@@ -61,7 +62,8 @@ router.get('/movie/discover/pop', (req, res) => {
                     data: data,
                     type: 'pop',
                     page: +page,
-                    media_type: 'movie'
+                    media_type: 'movie',
+                    pathname: pathname
                 });
             }
         });
@@ -70,6 +72,7 @@ router.get('/movie/discover/pop', (req, res) => {
 // TOP RATED MOVIES
 router.get('/movie/discover/top', (req, res) => {
     const page = req.query.page;
+    const pathname = req._parsedUrl.pathname;
 
     request(API_URL + `/movie/top_rated${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
@@ -79,7 +82,8 @@ router.get('/movie/discover/top', (req, res) => {
                     data: data,
                     type: 'top',
                     page: +page,
-                    media_type: 'movie'
+                    media_type: 'movie',
+                    pathname: pathname
                 });
             }
         });
@@ -89,16 +93,18 @@ router.get('/movie/discover/top', (req, res) => {
 
 router.get('/tv/discover/pop', (req, res) => {
     const page = req.query.page;
+    const pathname = req._parsedUrl.pathname;
 
     request(API_URL + `/tv/popular${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discoverTv', {
+                res.render('discover', {
                     data: data,
                     type: 'pop',
                     page: +page,
-                    media_type: 'tv'
+                    media_type: 'tv',
+                    pathname: pathname
                 });
             }
         });
@@ -108,16 +114,18 @@ router.get('/tv/discover/pop', (req, res) => {
 
 router.get('/tv/discover/top', (req, res) => {
     const page = req.query.page;
+    const pathname = req._parsedUrl.pathname;
 
     request(API_URL + `/tv/top_rated${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discoverTv', {
+                res.render('discover', {
                     data: data,
                     type: 'top',
                     page: +page,
-                    media_type: 'tv'
+                    media_type: 'tv',
+                    pathname: pathname
                 });
             }
         });
