@@ -3,14 +3,21 @@ const router = express.Router();
 const request = require('request');
 const { API_URL, API_KEY_URL } = require('../constants');
 
-router.get('/movie/discover/:genre_name/:genre_id/:page', (req, res) => {
-    const { genre_id, genre_name, page } = req.params;
+router.get('/movie/discover/:genre_name/:genre_id', (req, res) => {
+    const { genre_id, genre_name } = req.params;
+    const page = req.query.page;
 
     request(API_URL + `/discover/movie${API_KEY_URL}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genre_id}`,
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discover', { data: data, type: 'discover', genre_name: genre_name, genre_id: genre_id, page: +page });
+                res.render('discover', {
+                    data: data,
+                    type: 'discover',
+                    genre_name: genre_name,
+                    genre_id: genre_id,
+                    page: +page
+                });
             }
         });
 });
@@ -22,7 +29,13 @@ router.get('/tv/discover/:genre_name/:genre_id/:page', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('discoverTv', { data: data, type: 'discover', genre_name: genre_name, genre_id: genre_id, page: +page });
+                res.render('discoverTv', {
+                    data: data,
+                    type: 'discover',
+                    genre_name: genre_name,
+                    genre_id: genre_id,
+                    page: +page
+                });
             }
         });
 });
@@ -30,8 +43,9 @@ router.get('/tv/discover/:genre_name/:genre_id/:page', (req, res) => {
 // ====================================================== MOST POPULAR AND TOP RATED =====================================================
 
 // MOST POPULAR MOVIES
-router.get('/movie/discover/pop/:page', (req, res) => {
-    const { page } = req.params;
+router.get('/movie/discover/pop', (req, res) => {
+    const page = req.query.page;
+
     request(API_URL + `/movie/popular${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
@@ -42,8 +56,9 @@ router.get('/movie/discover/pop/:page', (req, res) => {
 });
 
 // TOP RATED MOVIES
-router.get('/movie/discover/top/:page', (req, res) => {
-    const { page } = req.params;
+router.get('/movie/discover/top', (req, res) => {
+    const page = req.query.page;
+
     request(API_URL + `/movie/top_rated${API_KEY_URL}&page=${page}`,
         (error, response, body) => {
             if (!error && response.statusCode === 200) {

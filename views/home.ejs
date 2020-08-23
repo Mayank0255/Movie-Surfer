@@ -22,11 +22,11 @@
             <% genreNames.genres.forEach(({ id, name }) => { %>
                 <div class='genretabs' id='<%=id%>' onmouseover='hoverGenreIn(<%=id%>)' onmouseout='hoverGenreOut(<%= id %>)'>
                     <% if (type === 'movie') { %>
-                    <a href='/movie/discover/<%=name%>/<%=id%>/1'>
+                    <a href='/movie/discover/<%=name%>/<%=id%>?page=1'>
                         <img src='/images/<%=imageList[name]%>'>
                     </a>
                     <div class='link'>
-                        <a href='/movie/discover/<%=name%>/<%=id%>/1' style='color: #ffffff;'>
+                        <a href='/movie/discover/<%=name%>/<%=id%>?page=1' style='color: #ffffff;'>
                             <%=name%>
                         </a>
                     </div>

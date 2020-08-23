@@ -42,19 +42,19 @@
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <% if (type === 'discover') { %>
                             <% if (page !== 1) { %>
-                                <a type="button" class="btn btn-outline-primary" href="/movie/discover/<%=genre_name%>/<%=genre_id%>/<%=page - 1%>">Prev</a>
+                                <a type="button" class="btn btn-outline-primary" href="/movie/discover/<%=genre_name%>/<%=genre_id%>?page=<%=page - 1%>">Prev</a>
                             <% }%>
-                            <a type="button" class="btn btn-outline-primary" href="/movie/discover/<%=genre_name%>/<%=genre_id%>/<%=page + 1%>">Next</a>
+                            <a type="button" class="btn btn-outline-primary" href="/movie/discover/<%=genre_name%>/<%=genre_id%>?page=<%=page + 1%>">Next</a>
                         <% } else if (type === 'pop movie') { %>
                             <% if (page !== 1) { %>
-                                <a type="button" class="btn btn-outline-primary" href="/movie/discover/pop/<%= page - 1 %>">Prev</a>
+                                <a type="button" class="btn btn-outline-primary" href="/movie/discover/pop?page=<%= page - 1 %>">Prev</a>
                             <% } %>
-                            <a type="button" class="btn btn-outline-primary" href="/movie/discover/pop/<%= page + 1 %>">Next</a>
+                            <a type="button" class="btn btn-outline-primary" href="/movie/discover/pop?page=<%= page + 1 %>">Next</a>
                         <% } else { %>
                             <% if (page !== 1) { %>
-                                <a type="button" class="btn btn-outline-primary" href="/movie/discover/top/<%= page - 1 %>">Prev</a>
+                                <a type="button" class="btn btn-outline-primary" href="/movie/discover/top?page=<%= page - 1 %>">Prev</a>
                             <% } %>
-                            <a type="button" class="btn btn-outline-primary" href="/movie/discover/top/<%= page + 1 %>">Next</a>
+                            <a type="button" class="btn btn-outline-primary" href="/movie/discover/top?page=<%= page + 1 %>">Next</a>
                         <% } %>
                     </div>
                 </div>
