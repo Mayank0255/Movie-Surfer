@@ -11,7 +11,11 @@ router.get('/tv/show/:tv_id', (req, res) => {
             console.log(error)
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('showTv', { data: data, tv_id: tv_id });
+                res.render('show', {
+                    data: data,
+                    tv_id: tv_id,
+                    media_type: 'tv'
+                });
             }
         });
 });
@@ -24,7 +28,11 @@ router.get('/movie/show/:movie_id', (req, res) => {
         (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 const data = JSON.parse(body);
-                res.render('show', { data: data, movie_id: movie_id });
+                res.render('show', {
+                    data: data,
+                    movie_id: movie_id,
+                    media_type: 'movie'
+                });
             }
         });
 });

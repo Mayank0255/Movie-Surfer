@@ -10,14 +10,13 @@
     </div>
     <% data.results.forEach(data => { %>
     <div class='row item' id='<%= data.id %>' onmouseover='hoverPanelIn(<%= data.id %>)' onmouseout='hoverPanelOut(<%= data.id %>)'>
+        <div class='col-lg-4 col-sm-6 left'>
         <% if (data.media_type === 'movie') { %>
-            <div class='col-lg-4 col-sm-6 left'>
                 <a href='/movie/show/<%= data.id %>'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
             </div>
             <div class='col-lg-8 col-sm-6 content'>
                 <a class='fc-color' href='/movie/show/<%= data.id %>'>
         <% } else if(data.media_type === 'tv') { %>
-                    <div class='col-lg-4 col-sm-6 left'>
                         <a href='/tv/show/<%= data.id %>'><img class='poster' src='http://image.tmdb.org/t/p/w342<%=data.poster_path%>'></a>
                     </div>
                     <div class='col-lg-8 col-sm-6 content'>

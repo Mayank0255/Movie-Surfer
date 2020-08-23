@@ -1,0 +1,22 @@
+<div style='margin-top: 25px;' class='col-md-4 col-sm-5 col-6 sectionls'>
+    <h5>Total Seasons </h5>
+    <br>
+    <h5 style='margin-top: 5px;'>Total Episodes </h5>
+    <br><br>
+    <h5>Production Companies</h5>
+</div>
+<div style='margin-top: 25px;' class='col-md-4 col-sm-5 col-6 sectionrs'>
+    <h5 style='color: #ffffff;'>
+        <%=data.number_of_seasons%>
+    </h5>
+    <br>
+    <h5 style='color: #ffffff;'>
+        <%=data.number_of_episodes%>
+    </h5>
+    <br><br>
+    <%data.production_companies.forEach(comp => {%>
+    <h6 style='color: #ffffff; font-size: 18px;'>
+        <%=comp.name%>
+    </h6>
+    <%});%>
+</div>
